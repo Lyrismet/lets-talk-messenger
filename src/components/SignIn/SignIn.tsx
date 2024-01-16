@@ -1,16 +1,16 @@
 import s from './SignIn.module.scss'
 import Logo from "@/components/Logo";
 import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
-import {config} from "@/app/firebaseExports";
+import {auth} from "@/app/firebaseExports";
 
 export default function SignIn() {
     const signInWithGoogle = () => {
 
         const provider = new GoogleAuthProvider();
-        signInWithPopup(config, provider)
+        signInWithPopup(auth, provider)
             .then((result) => {
                 // Обработка успешного входа
-                console.log("Successfully signed in:", result);
+                console.log("Successfully signed in");
             })
             .catch((error) => {
                 // Обработка ошибок входа

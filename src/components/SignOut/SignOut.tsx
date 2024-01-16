@@ -1,8 +1,8 @@
-import {config} from "@/app/firebaseExports";
+import {auth} from "@/app/firebaseExports";
 
 const SignOut = () => {
-    return config.currentUser &&(
-        <button onClick={() => config.signOut()}>Sign Out</button>
+    return auth.currentUser &&(
+        <button onClick={() => auth.signOut()}>Sign Out</button>
     );
 };
 
