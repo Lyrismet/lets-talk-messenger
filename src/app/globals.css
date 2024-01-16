@@ -20,6 +20,15 @@ button {
   text-decoration: none;
   background-color: transparent;
   font: inherit;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
   cursor: pointer;
 }
 
