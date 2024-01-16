@@ -1,21 +1,20 @@
-import Image from 'next/image'
+"use client";
+
 import styles from './page.module.css'
-import firebase from "firebase/compat/app";
-import {firebaseConfig} from "../../firebaseConfig";
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
 
-import {useAuthState} from 'react-firebase-hooks/auth';
-import {useCollectionData} from 'react-firebase-hooks/firestore';
+import {useAuthState} from "react-firebase-hooks/auth";
 
-firebase.initializeApp(firebaseConfig)
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+import ChatRoom from "@/components/ChatRoom/ChatRoom";
+import SignIn from "@/components/SignIn/SignIn";
+import {app, config, firestore} from "@/app/firebaseExports";
 
 export default function Home() {
+    const [user] = useAuthState(config);
+
     return (
         <main className={styles.main}>
-            base
+            {user ? <ChatRoom /> : <SignIn />}
         </main>
-    )
+    );
 }
+
