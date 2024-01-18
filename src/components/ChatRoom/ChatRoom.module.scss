@@ -103,6 +103,11 @@
     flex: 1;
     padding: 10px 0;
     gap: 35px;
+    .messageGoodTone{
+      color: #4756DF;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 
   form {
@@ -117,7 +122,13 @@
     bottom: 0;
     background-color: #FFFFFF;
     width: 100%;
-
+    .sendButtonHidden{
+      user-select: none;
+      pointer-events: none;
+      circle{
+        fill: #949494;
+      }
+    }
     input::placeholder {
       color: #949494;
     }
@@ -196,5 +207,4 @@
     height: 80%;
     box-sizing: border-box;
   }
-
 }
