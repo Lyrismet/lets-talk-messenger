@@ -7,7 +7,7 @@ const poppins = Poppins({weight: ['400', '600', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Let's talk app",
-  description: 'Next js app',
+  description: 'Chat library for knowledge sharing',
 }
 
 export default function RootLayout({
