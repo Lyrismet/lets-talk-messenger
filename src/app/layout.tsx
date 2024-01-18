@@ -1,9 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google';
+import { Montserrat } from "next/font/google";
 import React from "react";
 
 const poppins = Poppins({weight: ['400', '600', '700'], subsets: ['latin'] })
+const montserrat = Montserrat({weight: ['400', '600', '700'], subsets: ['cyrillic'] })
 
 export const metadata: Metadata = {
   title: "Let's talk app",
@@ -17,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={`${montserrat.className} ${poppins.className} `}>{children}</body>
     </html>
   )
 }
