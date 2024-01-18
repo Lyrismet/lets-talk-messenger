@@ -1,0 +1,28 @@
+.sideBarBlock{
+  border: 1px solid #f37474;
+  padding: 18px 30px 25px 25px;
+  border-radius: 7px;
+  border-top: 3px solid #f37474;
+}
+.sideBarTag{
+  border: 2px solid #f37474;
+  border-radius: 5px;
+  padding: 5px 7px;
+  color: #f37474;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: max-content;
+
+  font-size: 0.8rem;
+}
+.sideBarText{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.topWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
