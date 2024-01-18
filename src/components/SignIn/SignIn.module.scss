@@ -4,6 +4,9 @@
   width: 100vw;
   height: 100vh;
   padding: 0 5vw;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
   .visual {
     display: flex;
     flex-direction: column;
