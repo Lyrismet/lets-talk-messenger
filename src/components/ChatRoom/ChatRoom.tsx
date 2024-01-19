@@ -15,21 +15,23 @@ const ChatRoom = () => {
         const [formValue, setFormValue] = useState('')
         const sendMessage = async (e: any) => {
             e.preventDefault();
-            const uid = auth.currentUser?.uid;
-            const photoUrl = auth.currentUser?.photoURL;
-            const defaultUser = '/icons8-user-64.png';
-            const sanitizedPhotoUrl = photoUrl || defaultUser;
+            if (formValue.trim().length > 0) {
+                const uid = auth.currentUser?.uid;
+                const photoUrl = auth.currentUser?.photoURL;
+                const defaultUser = '/icons8-user-64.png';
+                const sanitizedPhotoUrl = photoUrl || defaultUser;
 
 
-            await addDoc(messageRef as any, {
-                text: formValue,
-                createdAt: serverTimestamp(),
-                uid,
-                photoUrl: photoUrl || sanitizedPhotoUrl,
-                displayName: auth.currentUser?.displayName
-            });
-            setFormValue('');
-            dummy.current!.scrollIntoView({behavior: 'smooth'});
+                await addDoc(messageRef as any, {
+                    text: formValue,
+                    createdAt: serverTimestamp(),
+                    uid,
+                    photoUrl: photoUrl || sanitizedPhotoUrl,
+                    displayName: auth.currentUser?.displayName
+                });
+                setFormValue('');
+                dummy.current!.scrollIntoView({behavior: 'smooth'});
+            }
         }
 
 
@@ -66,7 +68,8 @@ const ChatRoom = () => {
                 {/*Chat Container*/}
                 <div className={s.chatContainer}>
                     <div className={s.messageContainer}>
-                        <p className={s.messageGoodTone}>📌Welcome to the chat room! Keep a good tone, make an effort to write clear and helpful guides📌</p>
+                        <p className={s.messageGoodTone}>📌Welcome to the chat room! Keep a good tone, make an effort to
+                            write clear and helpful guides📌</p>
                         {messages && messages.map(msg => <ChatMessage key={msg.key} message={msg}/>)}
                         <div className={s.dummy} ref={dummy}/>
                     </div>
