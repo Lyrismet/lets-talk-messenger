@@ -43,4 +43,33 @@ input{
   outline: none;
 }
 
+/*checking for updates*/
+.mobile{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4756df;
+  z-index: 100;
+}
+.mobile p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+@media screen and (max-width: 850px) {
+  .mobile{
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+  }
+}
+
 

@@ -13,7 +13,11 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
-            {user ? <ChatRoom /> : <SignIn />}
+            {user ? <ChatRoom/> : <SignIn/>}
+            <div className="mobile">
+                <p>Our application is displayed correctly only on desktop.
+                A mobile version will be added in the future, stay tuned for updates.</p>
+            </div>
         </main>
     );
 }
